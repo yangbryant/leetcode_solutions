@@ -5,7 +5,12 @@
  */
 
 var convert = function(s, numRows) {
-	let count = numRows > 1 ? 2*numRows - 2 : 1;
+	if (numRows <= 1) {
+		return s;
+	}
+	
+	let count = 2 * numRows - 2;
+//	let count = numRows > 1 ? 2*numRows - 2 : 1;
 	
 	var array = s.split('').reduce(function (sum, elt, i) {
 		let index = i % count;
