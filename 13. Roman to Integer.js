@@ -2,6 +2,31 @@
  * @param {string} s
  * @return {number}
  */
+//var romanToInt = function(s) {
+//	var map = {
+//		'O': 0,
+//		'I': 1,
+//		'V': 5,
+//		'X': 10,
+//		'L': 50,
+//		'C': 100,
+//		'D': 500,
+//		'M': 1000
+//	};
+//	
+//	var sum = 0;
+//	var str = s.substring(1).concat('O');
+//	for (var i = 0; i < s.length; i++) {
+//		var cur = map[s[i]];
+//		if (cur < map[str[i]]) {
+//			sum -= cur;
+//		} else {
+//			sum += cur;
+//		}
+//	}
+//	return sum;
+//};
+
 var romanToInt = function(s) {
 	var map = {
 		'I': 1,
@@ -21,7 +46,8 @@ var romanToInt = function(s) {
 		pre = cur;
 	}
 	return sum;
-}
+};
+
 //var romanToInt = function(s) {
 //	var map = {
 //		'I': 1,
