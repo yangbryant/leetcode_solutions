@@ -27,23 +27,37 @@ function ListNode(val) {
 //	return node.next;
 //};
 
-var swapPairs = function(head) {
-	var node = new ListNode(0);
-	var curNode = node;
-	while (head) {
-		if (head.next) {
-			curNode.next = new ListNode(head.next.val);
-			curNode = curNode.next;
-			curNode.next = new ListNode(head.val);
-			curNode = curNode.next;
-			head = head.next.next;
-		} else {
-			curNode.next = new ListNode(head.val);
-			curNode = curNode.next;
-			head = head.next;
-		}
+//var swapPairs = function(head) {
+//	var node = new ListNode(0);
+//	var curNode = node;
+//	while (head) {
+//		if (head.next) {
+//			curNode.next = new ListNode(head.next.val);
+//			curNode = curNode.next;
+//			curNode.next = new ListNode(head.val);
+//			curNode = curNode.next;
+//			head = head.next.next;
+//		} else {
+//			curNode.next = new ListNode(head.val);
+//			curNode = curNode.next;
+//			head = head.next;
+//		}
+//	}
+//	return node.next;
+//};
+
+var swapPairs = function(n) {
+	if (n === null) {
+		return null
 	}
-	return node.next;
+	if (n.next === null) {
+		return n
+	}
+	let n1 = n.next
+	let n2 = n.next.next
+	n1.next = n
+	n.next = swapPairs(n2)
+	return n1
 };
 
 var l1 = new ListNode(1);
