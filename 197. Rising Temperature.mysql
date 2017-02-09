@@ -1,0 +1,3 @@
+# Write your MySQL query statement below
+
+select cur.Id as Id from Weather cur, Weather pre where cur.Temperature > pre.Temperature and datediff(cur.Date, pre.Date) = 1;
